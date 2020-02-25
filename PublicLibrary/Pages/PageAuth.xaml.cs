@@ -52,21 +52,41 @@ namespace PublicLibrary.Pages
                     MenuItem miAddBook = new MenuItem() { Header = "Добавить книгу" };
                     miAddBook.Click += MiAddBook_Click;
 
+                    MenuItem miDictionary = new MenuItem() { Header = "Справочник" };
+
+                    MenuItem miPublisher = new MenuItem() { Header = "Издательство" };
+                    miPublisher.Click += MiPublisher_Click;
+                    miDictionary.Items.Add(miPublisher);
+
+                    miDictionary.Items.Add(new MenuItem() { Header = "Жанры" });
+
                     miBook.Items.Add(miListBook);
                     miBook.Items.Add(new Separator());
                     miBook.Items.Add(miAddBook);
+
 
                     //miFile
                     //MenuItem miExit = new MenuItem() { Header = "Выйти" };
                     //MainWindow._MainMenu.Items[0]
 
                     MainWindow._MainMenu.Items.Add(miBook);
+                    MainWindow._MainMenu.Items.Add(miDictionary);
                 }
                 else
                 {
                     MessageBox.Show("Ошибка авторизации");
                 }
             }
+        }
+
+        private void MiPublisher_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow._MainFrame.Navigate(new PagePublisher());
+        }
+
+        private void PageAuth_Click(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         private void MiAddBook_Click(object sender, RoutedEventArgs e)

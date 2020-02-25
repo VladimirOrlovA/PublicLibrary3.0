@@ -106,7 +106,33 @@ namespace PublicLibrary.lip
         }
 
 
+        public bool AddPublisher(Publisher pub)
+        {
+            using (var db = new LiteDatabase(Path))
+            {
+                var pubs = db.GetCollection<Publisher>("Publisher");
+                pubs.Insert(pub);
+            }
+            return true;
+        }
 
+        public bool EditPublisher(Publisher pub)
+        {
+            using (var db = new LiteDatabase(Path))
+            {
+                var pubs = db.GetCollection<Publisher>("Publisher");
+                pubs.Update(pub);
+            }
+            return true;
+        }
+
+        public List<Publisher> GetAllPubs()
+        {
+            using (var db = new LiteDatabase(Path))
+            {
+                return db.GetCollection<Publisher>("Publisher").FindAll().ToList();
+            }
+        }
 
     }
 }

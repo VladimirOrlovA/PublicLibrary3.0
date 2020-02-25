@@ -2,26 +2,55 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:local="clr-namespace:PublicLibrary.Resources">
 
-    <Style x:Key="BaseFont">
+    <Style TargetType="{x:Type Grid}">
+        <Setter Property="Control.FontFamily" 
+                Value="Bahnschrift Light Condensed"/>
+    </Style>
+
+    <Style x:Key="Margin5">
+        <Setter Property="Control.Margin" 
+                Value="5"/>
+    </Style>
+
+
+    <Style TargetType="{x:Type RadioButton}" x:Key="baseRb">
+        <Setter Property="Control.FontSize"
+                Value="20"/>
+        <Setter Property="Control.Margin"
+                Value="0 10 0 0"/>
+    </Style>
+
+    <Style TargetType="{x:Type RadioButton}" 
+           BasedOn="{StaticResource baseRb}">
+    </Style>
+
+
+    <Style TargetType="{x:Type RadioButton}" 
+           BasedOn="{StaticResource baseRb}"
+           x:Key="rbRedFore">
+        <Setter Property="Control.Foreground"
+                Value="Red"/>
+    </Style>
+ 
+    <Style x:Key="lblDescr">
+        <Setter Property="Control.FontSize" Value="14"/>
+        <Setter Property="Control.Foreground" Value="LightGray"/>
+        <Setter Property="Control.FontStyle" Value="Italic"/>
+        <Setter Property="Control.Margin" Value="0 20 0 0"/>
+    </Style>
+
+
+    <Style x:Key="baseGroupBox">
+        <Setter Property="Control.FontSize" Value="26"/>
         <Setter Property="Control.FontFamily" Value="Bahnschrift Light Condensed"/>
         <Setter Property="Control.Margin" Value="5"/>
     </Style>
 
-    <Style TargetType="{x:Type RadioButton}" x:Key="baseRb">
-        <Setter Property="Control.FontSize" Value="20"></Setter>
-        <Setter Property="Control.Margin" Value="0 10 0 0"></Setter>
+    <Style TargetType="{x:Type TextBox}" x:Key="baseTextBox">
+        <Setter Property="Control.FontFamily" Value="Bahnschrift Light Condensed"/>
+        <Setter Property="Control.FontSize" Value="20"/>
+        <Setter Property="Control.HorizontalAlignment" Value="Stretch"/>
+        <Setter Property="Control.VerticalAlignment" Value="Center"/>
     </Style>
-
-    <Style TargetType="{x:Type RadioButton}"
-           BasedOn="{StaticResource baseRb}">
-    </Style>
-
-    <Style TargetType="{x:Type RadioButton}" BasedOn="{StaticResource baseRb}" x:Key="rbRedFore">
-           <Setter Property="Control.Foreground" Value="Red"></Setter>
-    </Style>
-
-    <Style TargetType="{x:Type ComboBox}">
-        <Setter Property="Control.Background" Value="White"/>
-    </Style>
-
+    
 </ResourceDictionary>

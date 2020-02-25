@@ -35,8 +35,7 @@ namespace PublicLibrary.Pages
         {
             StackPanel sp = ((ListBox)sender).SelectedItem as StackPanel;
         
-            //int id = Convert.ToInt32(((Label)sp.Children[0]).Content);
-            int id = (int)(((Label)sp.Children[0]).Content);
+            int id = Convert.ToInt32(((Label)sp.Children[0]).Content);
 
             Book book = dbContext.GetBookbyId(id);
             if(book!=null)

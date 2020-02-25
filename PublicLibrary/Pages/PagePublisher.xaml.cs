@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PublicLibrary.lip;
 
 namespace PublicLibrary.Pages
 {
@@ -20,9 +21,30 @@ namespace PublicLibrary.Pages
     /// </summary>
     public partial class PagePublisher : Page
     {
+        DbContext db = new DbContext(MainWindow.path);
+
         public PagePublisher()
         {
             InitializeComponent();
+           
+            gvPublisher.DataContext = new Publisher();
+            lwPublishers.ItemsSource = db.GetAllPubs();
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Publisher pub = (Publisher)gvPublisher.DataContext;
+
+            if (pub.Id != 0)
+            {
+                db.EditPublisher(pub);
+            }
+            else
+            {
+                db.AddPublisher(pub);
+            }
+            lwPublishers.ItemsSource = db.GetAllPubs();
         }
     }
 }

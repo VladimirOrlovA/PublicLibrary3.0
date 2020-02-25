@@ -28,40 +28,40 @@
         </Grid.ColumnDefinitions>
 
         <GroupBox Header="Доступность" FontSize="26"
-                  Grid.Column="0" Grid.Row="0"
-                  Margin="5" x:Name="GBavailability"
-                  Style="{StaticResource BaseFont}">
-
+                  x:Name="GBavailability"
+                  Grid.Row="0" Grid.Column="0" 
+                  Style="{StaticResource Margin5}">
 
             <StackPanel Margin="15">
-                <RadioButton Content="Доступна" x:Name="rbAvaliable"
-                             IsChecked="True"
-                             Style ="{StaticResource baseRb}"/>
+                <!--<StackPanel.Style>
+                    <Style>
+                        
+                    </Style>
+                </StackPanel.Style>-->
+                <RadioButton Content="Доступна" 
+                             x:Name="rbAvaliable"
+                             IsChecked="True" />
+                
                 <RadioButton Content="Не доступна"
-                              x:Name="rbNotAvaliable"
-                             IsChecked="False"
-                             Style ="{StaticResource rbRedFore}"/>
+                             x:Name="rbNotAvaliable"
+                             IsChecked="False" />
 
-                <Label Margin="0 20 0 0" FontSize="14"
-                       Foreground="LightGray" FontStyle="Italic"
-                       Content="{Binding ElementName=cbEdition, Path=SelectedItem.Name}"
-                       >
-                    
-                </Label>
+                <Label Style="{StaticResource lblDescr}"
+                       Content="{Binding ElementName=cbEdition, Path=SelectedItem.Name}"/>
             </StackPanel>
 
         </GroupBox>
 
-        <GroupBox Header="Настройки" FontSize="26"
-                  FontFamily="Bahnschrift Light Condensed"
-                  Grid.Column="1" Grid.Row="0"
-                  Margin="5" BorderBrush="#FFA1CDA9">   
+        <GroupBox Header="Настройки" 
+                  Grid.Column="1" Grid.Row="0" 
+                  Style="{StaticResource baseGroupBox}">
+            
             <StackPanel Margin="0 15 0 0">
                 <CheckBox Content="Лицам старше 18" FontSize="20" 
                           x:Name="chAfter18" IsChecked="{Binding Path=IsEighteenPlus}"/>
                 <CheckBox Content="Раритет" FontSize="20"
                           x:Name="chOld"/>
-                <CheckBox Content="Последнее издание Blend для VS" FontSize="20"
+                <CheckBox Content="Последнее издание" FontSize="20"
                           x:Name="chLasBook"/>
             </StackPanel>
         </GroupBox>
@@ -92,10 +92,8 @@
                        VerticalAlignment="Center"/>
 
                 <TextBox Grid.Column="1" Grid.Row="0"
-                         FontFamily="Bahnschrift Light Condensed"
-                         FontSize="20" Text="{Binding Path=Name}"
-                         HorizontalAlignment="Stretch"
-                         VerticalAlignment="Center" x:Name="TBXname"/>
+                         x:Name="TBXname" Text="{Binding Path=Name}"
+                         Style="{StaticResource baseTextBox}"/>
 
                 <Label Grid.Column="0" Grid.Row="1"
                        Content="АВТОР"
@@ -105,10 +103,8 @@
                        VerticalAlignment="Center"/>
 
                 <TextBox Grid.Column="1" Grid.Row="1"
-                         FontFamily="Bahnschrift Light Condensed"
-                         FontSize="20"  Text="{Binding Path=Author}"
-                         HorizontalAlignment="Stretch"
-                         VerticalAlignment="Center" x:Name="tbAuthor"/>
+                         Text="{Binding Path=Author}" x:Name="tbAuthor"
+                         Style="{StaticResource baseTextBox}"/>
 
                 <Label Grid.Column="0" Grid.Row="2"
                        Content="ДАТА ИЗДАНИЯ"
@@ -131,17 +127,16 @@
                        VerticalAlignment="Center"/>
 
                 <ComboBox Grid.Column="1" Grid.Row="3"
-                         FontFamily="Bahnschrift Light Condensed"
-                         FontSize="20" 
-                          
+                          x:Name="cbEdition"
+                      
                          SelectedValue="{Binding Path=Edition.Id}"
                          SelectedValuePath="Id"
                          DisplayMemberPath="Name"
                           
+                           FontFamily="Bahnschrift Light Condensed"
+                         FontSize="20" 
                          HorizontalAlignment="Stretch"
-                         VerticalAlignment="Center" x:Name="cbEdition"
-                         Background="White" 
-                         >
+                         VerticalAlignment="Center" >
                 </ComboBox>
 
                 <Label Grid.Column="0" Grid.Row="4"

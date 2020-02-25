@@ -7,27 +7,57 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PagePublisher">
-
     <Page.Resources>
-        <Style x:Key="lbH1">
-            <Setter Property="Control.FontSize" Value="24"/>
-            <Setter Property="Control.FontFamily" Value="Bahnschrift Light Condensed"/>
-            <Setter Property="Control.Margin" Value="15"/>
-        </Style>
 
-        <Style x:Key="lbSpan">
-            <Setter Property="Label.FontSize" Value="28"/>
+        <Style x:Key="BaseFont">
+            <Setter Property="Control.FontFamily"
+                    Value="Bahnschrift Light Condensed"/>
+        </Style>
+        
+        <Style BasedOn="{StaticResource BaseFont}" 
+               x:Key="lblh1">
+            <Setter Property="Control.FontSize"
+                    Value="24"/>
+         
+            <Setter Property="Control.Margin"
+                    Value="10"/>
+        </Style>
+        
+        <Style BasedOn="{StaticResource BaseFont}" TargetType="{x:Type Label}">
+            <Setter Property="Label.FontSize"
+                    Value="22"/>
+            <Setter Property="Label.HorizontalAlignment"
+                    Value="Center"/>
+            <Setter Property="Margin"
+                    Value="8"></Setter>
+        </Style>
+        <Style BasedOn="{StaticResource BaseFont}"
+               TargetType="TextBox">
+            <Setter Property="FontSize"
+                    Value="22"></Setter>
+            <Setter Property="HorizontalAlignment"
+                    Value="Stretch"></Setter>
+            <Setter Property="Margin"
+                    Value="8"></Setter>
+        </Style>
+        <Style BasedOn="{StaticResource BaseFont}"
+               TargetType="Button">
+            <Setter Property="FontSize"
+                    Value="22"></Setter>
+            <Setter Property="HorizontalAlignment"
+                    Value="Stretch"></Setter>
+            <Setter Property="Margin"
+                    Value="8"></Setter>
         </Style>
     </Page.Resources>
     
-
-    <DockPanel Background="White" LastChildFill="True">
+    <DockPanel LastChildFill="True">
         <Label DockPanel.Dock="Top" 
-               Content="Справочник издательств"
-               Style="{StaticResource lbH1}"></Label>
-        <Grid DockPanel.Dock="Bottom"
-              Style="{StaticResource lbSpan}">
+               Content="Справочник"
+               Style="{StaticResource lblh1}"/>
+        <Grid x:Name="gvPublisher" DockPanel.Dock="Bottom">
             <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
@@ -35,10 +65,39 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
-            </Grid.ColumnDefinitions> 
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" 
+                   Content="Наименование"/>
+            <TextBox Text="{Binding Path=Name}"
+                     Grid.Row="0" Grid.Column="1"/>
             
-            <Label gri
+            <Label Grid.Row="1" Grid.Column="0" 
+                   Content="Год издание"/>
+            <TextBox Text="{Binding Path=Year}"
+                Grid.Row="1" Grid.Column="1"/>
+            
+            <Label Grid.Row="2" Grid.Column="0"
+                   Content="Описание"/>
+            <TextBox Grid.Row="2" Grid.Column="1"
+                     Text="{Binding Path=Description}"/>
+
+            <Button Click="Button_Click"
+                Grid.Row="3" Grid.Column="1"
+                    Content="Сохранить"></Button>
+
         </Grid>
-        <ListView></ListView>
+        <ListView x:Name="lwPublishers" ScrollViewer.CanContentScroll="True"
+                  ScrollViewer.VerticalScrollBarVisibility="Visible">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Id"></GridViewColumn>
+                        <GridViewColumn Header="Наименование"></GridViewColumn>
+                        <GridViewColumn Header="Год"></GridViewColumn>
+                        <GridViewColumn Header="Описание"></GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </DockPanel>
 </Page>

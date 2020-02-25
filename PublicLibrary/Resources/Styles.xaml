@@ -1,0 +1,27 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:PublicLibrary.Resources">
+
+    <Style x:Key="BaseFont">
+        <Setter Property="Control.FontFamily" Value="Bahnschrift Light Condensed"/>
+        <Setter Property="Control.Margin" Value="5"/>
+    </Style>
+
+    <Style TargetType="{x:Type RadioButton}" x:Key="baseRb">
+        <Setter Property="Control.FontSize" Value="20"></Setter>
+        <Setter Property="Control.Margin" Value="0 10 0 0"></Setter>
+    </Style>
+
+    <Style TargetType="{x:Type RadioButton}"
+           BasedOn="{StaticResource baseRb}">
+    </Style>
+
+    <Style TargetType="{x:Type RadioButton}" BasedOn="{StaticResource baseRb}" x:Key="rbRedFore">
+           <Setter Property="Control.Foreground" Value="Red"></Setter>
+    </Style>
+
+    <Style TargetType="{x:Type ComboBox}">
+        <Setter Property="Control.Background" Value="White"/>
+    </Style>
+
+</ResourceDictionary>

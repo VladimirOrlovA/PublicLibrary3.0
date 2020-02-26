@@ -46,5 +46,16 @@ namespace PublicLibrary.Pages
             }
             lwPublishers.ItemsSource = db.GetAllPubs();
         }
+
+        // событие по клику на итем
+        //private void ListViewItem_PreviewMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        //{
+        //    gvPublisher.DataContext = (Publisher)((ListViewItem)sender.);
+        //}
+
+        private void lwPublishers_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            gvPublisher.DataContext = (Publisher)(((ListView)sender).SelectedItem);
+        }
     }
 }

@@ -134,5 +134,34 @@ namespace PublicLibrary.lip
             }
         }
 
+
+        public bool AddGenre(Genre genre)
+        {
+            using (var db = new LiteDatabase(Path))
+            {
+                var genres = db.GetCollection<Genre>("Genre");
+                genres.Insert(genre);
+            }
+            return true;
+        }
+
+        public bool EditGenre(Genre genre)
+        {
+            using (var db = new LiteDatabase(Path))
+            {
+                var genres = db.GetCollection<Genre>("Genre");
+                genres.Update(genre);
+            }
+            return true;
+        }
+
+        public List<Genre> GetAllGenres()
+        {
+            using (var db = new LiteDatabase(Path))
+            {
+                return db.GetCollection<Genre>("Genre").FindAll().ToList();
+            }
+        }
+
     }
 }

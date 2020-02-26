@@ -61,6 +61,9 @@
     <Compile Include="Pages\PageBooks.xaml.cs">
       <DependentUpon>PageBooks.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PageGenre.xaml.cs">
+      <DependentUpon>PageGenre.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PageMainAuth.xaml.cs">
       <DependentUpon>PageMainAuth.xaml</DependentUpon>
     </Compile>
@@ -93,6 +96,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PageBooks.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PageGenre.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

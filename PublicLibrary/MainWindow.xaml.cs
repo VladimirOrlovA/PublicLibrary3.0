@@ -23,8 +23,8 @@ namespace PublicLibrary
     /// </summary>
     public partial class MainWindow : Window
     {
-        //public static string path = @"C:\Users\ОрловВ\source\repos\PublicLibrary3.0\PublicLibrary\DataBase\MyData.db";
-        public static string path = @"C:\Users\Vladimir\source\repos\PublicLibrary3.0\PublicLibrary\DataBase\MyData.db";
+        public static string path = @"C:\Users\ОрловВ\source\repos\PublicLibrary3.0\PublicLibrary\DataBase\MyData.db";
+        //public static string path = @"C:\Users\Vladimir\source\repos\PublicLibrary3.0\PublicLibrary\DataBase\MyData.db";
         public static User user = new User() { Login="admin"};
         public static Frame _MainFrame = null;
         public static Menu _MainMenu;

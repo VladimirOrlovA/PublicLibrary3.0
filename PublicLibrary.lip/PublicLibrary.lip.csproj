@@ -47,7 +47,6 @@
   <ItemGroup>
     <Compile Include="Book.cs" />
     <Compile Include="DbContext.cs" />
-    <Compile Include="Publisher.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

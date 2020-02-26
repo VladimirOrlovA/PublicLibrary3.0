@@ -39,9 +39,9 @@ namespace PublicLibrary.Pages
 
             cbGenre.ItemsSource = new List<Genre>()
             {
-                new Genre(1, "Деловая литература"),
-                new Genre(2, "Детективы и Триллеры"),
-                new Genre(3, "Литература для детей"),
+                //new Genre(1, "Деловая литература"),
+                //new Genre(2, "Детективы и Триллеры"),
+                //new Genre(3, "Литература для детей"),
             };
 
             if (book != null)

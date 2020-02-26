@@ -66,6 +66,7 @@
                     <MenuItem Header="Удалить"></MenuItem>
                 </ContextMenu>
             </ListView.ContextMenu>
+
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Наименование"

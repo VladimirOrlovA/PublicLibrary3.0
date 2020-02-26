@@ -86,15 +86,20 @@
                     Content="Сохранить"></Button>
 
         </Grid>
+        
         <ListView x:Name="lwPublishers" ScrollViewer.CanContentScroll="True"
                   ScrollViewer.VerticalScrollBarVisibility="Visible">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header="Id"></GridViewColumn>
-                        <GridViewColumn Header="Наименование"></GridViewColumn>
-                        <GridViewColumn Header="Год"></GridViewColumn>
-                        <GridViewColumn Header="Описание"></GridViewColumn>
+                        <GridViewColumn Header="Id" Width="auto"
+                                        DisplayMemberBinding="{Binding Path=Id}"></GridViewColumn>
+                        <GridViewColumn Header="Наименование" Width="auto"
+                                        DisplayMemberBinding="{Binding Path=Name}"></GridViewColumn>
+                        <GridViewColumn Header="Год" Width="auto"
+                                        DisplayMemberBinding="{Binding Path=Year}"></GridViewColumn>
+                        <GridViewColumn Header="Описание" Width="auto"
+                                        DisplayMemberBinding="{Binding Path=Description}"></GridViewColumn>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>

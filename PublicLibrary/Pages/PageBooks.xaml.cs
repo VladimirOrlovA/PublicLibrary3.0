@@ -57,5 +57,10 @@ namespace PublicLibrary.Pages
         {
             MainWindow._MainFrame.Navigate(new PageViewContent());
         }
+
+        private void LwBooks_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("dssdsd");
+        }
     }
 }

@@ -17,22 +17,13 @@ namespace PublicLibrary.lip
         public string Name { get; set; }
     }
 
-    public class Publisher
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Year { get; set; }
-        public string Description { get; set; }
-
-    }
-
     public class Genre
     {
-        //public Genre(int Id, string Name)
-        //{
-        //    this.Id = Id;
-        //    this.Name = Name;
-        //}
+        public Genre(int Id, string Name)
+        {
+            this.Id = Id;
+            this.Name = Name;
+        }
         public int Id { get; set; }
         public string Name { get; set; }
     }
@@ -59,5 +50,8 @@ namespace PublicLibrary.lip
         public int AddedBy { get; set; }
 
         public DateTime AddedTime { get; set; }
+
+
+
     }
 }

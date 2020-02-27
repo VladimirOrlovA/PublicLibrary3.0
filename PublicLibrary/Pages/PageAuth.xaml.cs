@@ -58,9 +58,7 @@ namespace PublicLibrary.Pages
                     miPublisher.Click += MiPublisher_Click;
                     miDictionary.Items.Add(miPublisher);
 
-                    MenuItem miGenre = new MenuItem() { Header = "Жанры" };
-                    miGenre.Click += MiGenre_Click;
-                    miDictionary.Items.Add(miGenre);
+                    miDictionary.Items.Add(new MenuItem() { Header = "Жанры" });
 
                     miBook.Items.Add(miListBook);
                     miBook.Items.Add(new Separator());
@@ -79,11 +77,6 @@ namespace PublicLibrary.Pages
                     MessageBox.Show("Ошибка авторизации");
                 }
             }
-        }
-
-        private void MiGenre_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow._MainFrame.Navigate(new PageGenre());
         }
 
         private void MiPublisher_Click(object sender, RoutedEventArgs e)

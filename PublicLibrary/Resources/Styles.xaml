@@ -127,4 +127,144 @@
         </Style.Triggers>
     </Style>
 
+
+
+    <Style x:Key="stlBtnAuth">
+        <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+        <Setter Property="Control.Width" Value="150"/>
+        <Setter Property="Control.Height" Value="30"/>
+        <Setter Property="Control.FontSize" Value="20"/>
+        <Setter Property="Control.Margin" Value="15 15 10 0"/>
+        <Setter Property="Control.FontFamily" Value="Bahnschrift Light Condensed"/>
+    </Style>
+
+    <ControlTemplate x:Key="tmplBtnAuth" TargetType="Button">
+        <Grid Style="{StaticResource stlBtnAuth}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="25"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Column="0" 
+                   Source="..\Image\makefg.png" 
+                   Height="25" Width="25"
+                   VerticalAlignment="Top" />
+
+            <ContentControl Grid.Column="1" VerticalContentAlignment="Center"
+                            Margin="20 0 0 0" Foreground="White"
+                           Name="ccBtnAuth" 
+                            Cursor="Hand">
+                <ContentPresenter RecognizesAccessKey="True"/>
+            </ContentControl>
+
+        </Grid>
+
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="Black"
+                        TargetName="ccBtnAuth"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="stlBtnReg">
+        <Setter Property="Control.HorizontalAlignment" Value="Center"/>
+        <Setter Property="Control.Width" Value="200"/>
+        <Setter Property="Control.Height" Value="30"/>
+        <Setter Property="Control.Margin" Value="10 28 10 0"/>
+        <Setter Property="Control.FontSize" Value="18"/>
+        <Setter Property="Control.FontFamily" Value="Bahnschrift Light Condensed"/>
+    </Style>
+
+    <ControlTemplate x:Key="tmplBtnReg"
+                     TargetType="{x:Type Button}">
+        <TextBlock TextDecorations="Underline" Foreground="Blue"
+                   HorizontalAlignment="Center" Name="tbBtnReg"
+                   Cursor="Hand">
+            <ContentControl  Foreground="Blue">
+                <ContentPresenter RecognizesAccessKey="True"/>
+            </ContentControl>
+        </TextBlock>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="TextBlock.TextDecorations"
+                        Value="None"
+                        TargetName="tbBtnReg"/>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="tbxLogin">
+        <Setter Property="Control.HorizontalAlignment" Value="Center" />
+        <Setter Property="Control.Width" Value="200" />
+        <Setter Property="Control.Height" Value="30" />
+        <Setter Property="Control.VerticalContentAlignment" Value="Center" />
+        <Setter Property="Control.Margin" Value="10 0 10 0" />
+        <Setter Property="Control.FontSize" Value="18" />
+    </Style>
+
+    <ControlTemplate x:Key="tmplLogin" TargetType="TextBox">
+        <Border Background="LightGray"
+                BorderThickness="0"
+                CornerRadius="5"
+                Height="50"
+                Width="250">
+
+            <Grid Margin="5 0 0 0" ShowGridLines="False">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" 
+                       Source="C:\Users\ГерценЕ\Desktop\PublicLibrary3.0\PublicLibrary\Image\loginIcon.png">
+                </Image>
+                
+                <TextBox Grid.Column="1" Height="45"
+                     BorderThickness="0"
+                     Background="Transparent"
+                     VerticalContentAlignment="Center"
+                     HorizontalContentAlignment="Center"
+                     FontSize="35"/>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="tmplPassword" TargetType="PasswordBox">
+        <Border Background="LightGray"
+                BorderThickness="0"
+                CornerRadius="5"
+                Height="50"
+                Width="250">
+            <Grid Margin="5 0 0 0">
+               
+               
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Image Grid.Column="0" 
+                      
+                       Source="C:\Users\ГерценЕ\Desktop\PublicLibrary3.0\PublicLibrary\Image\passIcon.png">
+                    
+                </Image>
+                <!--<Grid Grid.Column="0" > 
+                    <Grid.Background>
+                        <ImageBrush ImageSource="C:\Users\ГерценЕ\Desktop\PublicLibrary3.0\PublicLibrary\Image\passIcon.png"
+                                Stretch="None"
+                                
+                                AlignmentX="Left"/>
+                    </Grid.Background>
+                </Grid>-->
+
+                <PasswordBox Grid.Column="1" Height="45"
+                     BorderThickness="0"
+                     Background="Transparent"
+                     VerticalContentAlignment="Center"
+                     HorizontalContentAlignment="Center"
+                     FontSize="35" Margin="25 0 0 0 "/>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+
 </ResourceDictionary>

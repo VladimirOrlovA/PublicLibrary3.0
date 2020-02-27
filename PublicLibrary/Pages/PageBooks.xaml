@@ -66,10 +66,9 @@
                     <MenuItem Header="Удалить"></MenuItem>
                 </ContextMenu>
             </ListView.ContextMenu>
-
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Наименование"
+                    <GridViewColumn  Header="Наименование"
                                     DisplayMemberBinding="{Binding Path=Name}"></GridViewColumn>
                     <GridViewColumn Header="Автор"
                                     DisplayMemberBinding="{Binding Path=Author}"></GridViewColumn>

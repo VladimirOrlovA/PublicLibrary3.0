@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:PublicLibrary.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="400"
+      d:DesignHeight="450" d:DesignWidth="800"
       Title="PagePublisher">
     <Page.Resources>
 
@@ -86,31 +86,22 @@
                     Content="Сохранить"></Button>
 
         </Grid>
-        
         <ListView x:Name="lwPublishers" ScrollViewer.CanContentScroll="True"
                   ScrollViewer.VerticalScrollBarVisibility="Visible"
-                  SelectionChanged="lwPublishers_SelectionChanged">
+                  SelectionChanged="LwPublishers_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
-                        <GridViewColumn Header="Id" Width="auto"
-                                        DisplayMemberBinding="{Binding Path=Id}"></GridViewColumn>
-                        <GridViewColumn Header="Наименование" Width="auto"
-                                        DisplayMemberBinding="{Binding Path=Name}"></GridViewColumn>
-                        <GridViewColumn Header="Год" Width="auto"
-                                        DisplayMemberBinding="{Binding Path=Year}"></GridViewColumn>
-                        <GridViewColumn Header="Описание" Width="auto"
-                                        DisplayMemberBinding="{Binding Path=Description}"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Id}" Header="Id"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Name}" 
+                                        Header="Наименование"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Year}" 
+                                        Header="Год"></GridViewColumn>
+                        <GridViewColumn DisplayMemberBinding="{Binding Path=Description}" 
+                                        Header="Описание"></GridViewColumn>
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
-            
-            <!--<ListView.ItemContainerStyle>
-                <Style TargetType="ListViewItem">
-                    <EventSetter Event="PreviewMouseLeftButtonUp" Handler="ListViewItem_PreviewMouseLeftButtonUp"></EventSetter>
-                </Style>
-            </ListView.ItemContainerStyle>-->
-            
         </ListView>
     </DockPanel>
 </Page>

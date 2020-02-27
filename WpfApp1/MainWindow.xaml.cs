@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace PublicLibrary.Pages
+namespace WpfApp1
 {
     /// <summary>
-    /// Логика взаимодействия для Genre.xaml
+    /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
-    public partial class PageGenre : Page
+    public partial class MainWindow : Window
     {
-        public PageGenre()
+        public MainWindow()
         {
             InitializeComponent();
         }

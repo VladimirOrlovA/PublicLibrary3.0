@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{59D76F85-BD8E-47EC-B7E8-1595073D7B7D}</ProjectGuid>
+    <ProjectGuid>{050570E1-B8EE-4147-8844-D68031726FFA}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>PublicLibrary</RootNamespace>
-    <AssemblyName>PublicLibrary</AssemblyName>
+    <RootNamespace>WpfApp1</RootNamespace>
+    <AssemblyName>WpfApp1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -55,30 +55,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Pages\PageGenre.xaml.cs">
-      <DependentUpon>PageGenre.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PageAuth.xaml.cs">
-      <DependentUpon>PageAuth.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PageBooks.xaml.cs">
-      <DependentUpon>PageBooks.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PageMainAuth.xaml.cs">
-      <DependentUpon>PageMainAuth.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PagePublisher.xaml.cs">
-      <DependentUpon>PagePublisher.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PageViewContent.xaml.cs">
-      <DependentUpon>PageViewContent.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PageWelcome.xaml.cs">
-      <DependentUpon>PageWelcome.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="RegWindow.xaml.cs">
-      <DependentUpon>RegWindow.xaml</DependentUpon>
-    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -91,42 +67,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Pages\PageGenre.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\PageAuth.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\PageBooks.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\PageMainAuth.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\PagePublisher.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\PageViewContent.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Pages\PageWelcome.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="RegWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\Styles.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -153,31 +93,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PublicLibrary.lip\PublicLibrary.lip.csproj">
-      <Project>{607db133-5ca2-4248-b0c6-8cc693ffe704}</Project>
-      <Name>PublicLibrary.lip</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PublicLibrary.NCALayer\PublicLibrary.NCALayer.csproj">
-      <Project>{70cd4fb9-30bc-4d0e-a6c2-f04630dc596a}</Project>
-      <Name>PublicLibrary.NCALayer</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\60647.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\AuthIcon.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\makefg.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\loginIcon.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Image\passIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

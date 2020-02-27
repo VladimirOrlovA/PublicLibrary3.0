@@ -7,15 +7,21 @@
       mc:Ignorable="d" 
       Title="PageAuth">
 
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="..\Resources\Styles.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    
     <StackPanel x:Name="stUsers">
 
         <Label HorizontalAlignment="Center" FontSize="18" Margin="0"
                FontFamily="Bahnschrift Light Condensed" Foreground="White">Логин</Label>
         <TextBox x:Name="InputLogin" 
-                 Text="{Binding Path=Login}"
-                 HorizontalAlignment="Center" 
-                 Width="200" Height="30" FontSize="18" 
-                 VerticalContentAlignment="Center" Margin="10 0 10 0"
+                 Text="555"
+                 Template="{StaticResource tmplLogin}"
                  KeyDown="InputLogin_KeyDown"
                  LostFocus="InputLogin_LostFocus"
                  FontFamily="Bahnschrift Light Condensed"/>
@@ -23,18 +29,16 @@
 
         <Label HorizontalAlignment="Center" FontSize="18" Margin="0"
                FontFamily="Bahnschrift Light Condensed">Пароль</Label>
-        <PasswordBox x:Name="InputPassword" HorizontalAlignment="Center" 
-                     Width="200" Height="30" FontSize="18" 
-                     Password="123"
-                      VerticalContentAlignment="Center" Margin="10 0 10 0"/>
+        <PasswordBox x:Name="InputPassword"
+                     Template="{StaticResource tmplPassword}"
+                     Password="123"/>
 
-        <Button Click="BtnReg_Click" HorizontalAlignment="Center" x:Name="btnReg" 
-                Width="200" Height="30" Margin="10 20 10 0" FontSize="18" 
-                Content="Регистрация" FontFamily="Bahnschrift Light Condensed"/>
 
-        <Button Click="Button_Click" HorizontalAlignment="Center" 
-                Width="200" Height="30" FontSize="18"  Margin="10 5 10 0"
-                Content="Войти" FontFamily="Bahnschrift Light Condensed"
-                IsDefault="True"/>
+        <Button Click="Button_Click" Content="ВОЙТИ" IsDefault="True"
+                Template="{StaticResource tmplBtnAuth}"/>
+
+        <Button Click="BtnReg_Click" x:Name="btnReg" Content="регистрация"
+                Template="{StaticResource tmplBtnReg}"/>
+
     </StackPanel>
 </Page>

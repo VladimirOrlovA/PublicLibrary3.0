@@ -171,11 +171,10 @@
             </Grid>
         </Border>
 
-        <Button VerticalAlignment="Center"
-                HorizontalAlignment="Right"
-                Grid.Row="3"  FontSize="26"
-                FontFamily="Bahnschrift Light Condensed"
-                Grid.Column="1"
-                Margin="5" x:Name="AddBtn"/>
+        <WrapPanel Orientation="Horizontal"  Grid.Row="3" Grid.Column="1" >
+
+            <Button x:Name="AddBtn"  Style="{StaticResource bigButton4}"/>
+
+        </WrapPanel>
     </Grid>
 </Page>
